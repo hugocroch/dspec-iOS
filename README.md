@@ -1,7 +1,7 @@
 dspec-iOS
 =========
 
-A simple way to define and render UI specs on top of your iOS UI inspired by the Android library dspec from Lucas Rocha.
+A simple way to define and render UI specs on top of your iOS UI inspired by the Android library dspec from Lucas Rocha. https://github.com/lucasr/dspec
 
 There two way to add dspec :
 
@@ -21,6 +21,10 @@ There two way to add dspec :
     - (void)viewWillDisappear:(BOOL)animated {
     	[designView removeFromSuperview];
     }
+    
+   
+   
+
 
 
 
