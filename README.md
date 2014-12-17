@@ -21,7 +21,9 @@ There two way to add dspec :
     
    
    
-
+Or you can simply add a UIView in your controller above everything.
+**NOTE**
+In storyBoard, don't forget to set the background **clearColor** if you  want a _beautiful_ live preview of the baseline grid.
 
 
 
