@@ -8,6 +8,9 @@ There two way to add dspec :
  There two way to init dspec
 
 
+    
+    DesignSpecView *designView;
+    
     - (void)viewWillAppear:(BOOL)animated {
     	[super viewWillAppear:animated];
     	DesignSpecView *designView = [[DesignSpecView alloc] 	initWithFrame:self.view.frame];
