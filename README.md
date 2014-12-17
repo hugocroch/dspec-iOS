@@ -14,7 +14,6 @@ There two way to add dspec :
     - (void)viewWillAppear:(BOOL)animated {
     	[super viewWillAppear:animated];
     	DesignSpecView *designView = [[DesignSpecView alloc] 	initWithFrame:self.view.frame];
-    //    [[[[UIApplication sharedApplication] delegate] window] addSubview:designView];
     	[[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:designView];
         [designView.designSpec loadSpecFromFileName:@"main_activity_spec"];
     }
