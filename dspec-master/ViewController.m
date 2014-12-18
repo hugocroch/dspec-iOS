@@ -10,6 +10,7 @@
 #import "DesignSpecView.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet DesignSpecView *designView;
 
 @end
 
@@ -20,19 +21,15 @@ DesignSpecView *designView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.designView.designSpec loadSpecFromFileName:@"main_activity_spec"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    DesignSpecView *designView = [[DesignSpecView alloc] initWithFrame:self.view.frame];
-    //    [[[[UIApplication sharedApplication] delegate] window] addSubview:designView];
-    [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:designView];
-    [designView.designSpec loadSpecFromFileName:@"main_activity_spec"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [designView removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
