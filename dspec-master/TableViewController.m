@@ -31,8 +31,7 @@ DesignSpecView *designView;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     designView = [[DesignSpecView alloc] initWithFrame:self.view.frame];
-    //    [[[[UIApplication sharedApplication] delegate] window] addSubview:designView];
-    [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:designView];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:designView];
     [designView.designSpec loadSpecFromFileName:@"main_activity_spec"];
 }
 

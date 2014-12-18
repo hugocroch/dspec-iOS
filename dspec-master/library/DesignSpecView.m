@@ -54,14 +54,19 @@ IB_DESIGNABLE
     [self.designSpec draw:context];
 }
 
+#if !TARGET_INTERFACE_BUILDER
 - (void)didMoveToSuperview {
-    //    NSDictionary *viewsDictionary = @{ @"view" : self };
-    //    self.constraint_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:viewsDictionary];
-    //    self.constraint_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:viewsDictionary];
-    //    self.translatesAutoresizingMaskIntoConstraints = NO;
-    //    [self.superview addConstraints:self.constraint_V];
-    //    [self.superview addConstraints:self.constraint_H];
+    if (self.superview) {
+        NSDictionary *viewsDictionary = @{ @"view" : self };
+        self.constraint_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:viewsDictionary];
+        self.constraint_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:viewsDictionary];
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.superview addConstraints:self.constraint_V];
+        [self.superview addConstraints:self.constraint_H];
+    }
 }
+
+#endif
 
 #pragma mark - Properties
 
