@@ -21,7 +21,7 @@ DesignSpecView *designView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.designView.designSpec loadSpecFromFileName:@"main_activity_spec"];
+    [self.designView.designSpec addSpacing:185 Size:16 From:TOP];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
